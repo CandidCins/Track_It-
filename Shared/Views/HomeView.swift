@@ -28,11 +28,11 @@ struct HomeView: View {
                 ForEach(vm.allPackages) { package in
                     PackageStatusRowView(package: package)
                 }
+                
+                
             }
-            .overlay( AddTrackingButton()
-                    .opacity(0.5)
-                    .offset(y: 200)
-            )
+            
+            AddTrackingButton()
         } // END: VSTACK
     }// END: BODY
 }
