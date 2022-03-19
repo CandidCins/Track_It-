@@ -48,7 +48,7 @@ struct AddTrackingView: View {
     
     func addPackageTracking(number: String, carrier: String, description: String) {
         let newPackage = Package(trackingNumber: number,
-                                 carrier: carrier,
+                                 carrier: carrier.uppercased(),
                                  description: description,
                                  status: "En Route")
         

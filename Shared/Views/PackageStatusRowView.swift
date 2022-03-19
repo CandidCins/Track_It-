@@ -16,20 +16,41 @@ struct PackageStatusRowView: View {
     var body: some View {
         
         HStack {
+            
             Circle()
                 .fill(Color.green)
                 .frame(width: 25, height: 25, alignment: .leading)
             
-             if package.carrier.contains("UPS") ||
-                package.carrier.contains("USPS") ||
-                package.carrier.contains("DHL") ||
-                package.carrier.contains("FEDEX") {
-                
-                Image("\(package.carrier)LOGO")
+            //switch on carrier name to show appropriate logo
+            switch package.carrier {
+            case "UPS":
+                Image("UPSLOGO")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 50, height: 50)
-            }// END: IF-STATEMENT
+                    .frame(width:50, height: 50)
+                
+            case "USPS":
+                Image("USPSLOGO")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width:50, height: 50)
+
+            case "DHL":
+                Image("DHLLOGO")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width:50, height: 50)
+
+            case "FEDEX":
+                Image("FEDEXLOGO")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width:50, height: 50)
+
+            default :
+                Image(systemName: "xmark")
+            }// END: SWITCH
+            
             
             VStack(alignment: .leading, spacing: 5) {
                 Text(package.description)

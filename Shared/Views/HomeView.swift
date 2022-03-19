@@ -28,12 +28,11 @@ struct HomeView: View {
                 ForEach(vm.allPackages) { package in
                     PackageStatusRowView(package: package)
                 }
-                
-                
             }
             
             AddTrackingButton()
-        } // END: VSTACK
+        }
+        // END: VSTACK
     }// END: BODY
 }
 
