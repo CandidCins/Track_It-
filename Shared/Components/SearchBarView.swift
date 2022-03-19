@@ -35,7 +35,7 @@ struct SearchBarView: View {
                         .foregroundColor(.theme.accent)
                         .opacity(searchText.isEmpty ? 0.0 : 1.0)
                         .onTapGesture(perform: {
-//                            UIApplication.shared.dismissKeyboard()
+                            UIApplication.shared.dismissKeyboard()
                             searchText = ""
                         })
                     , alignment: .trailing
